@@ -1,0 +1,40 @@
+public class Solution {
+    // DO NOT MODIFY THE ARGUMENTS WITH "final" PREFIX. IT IS READ ONLY
+    public int[] solve(final int[] A, final int[] B) {
+        int n=A.length;
+        int m=B.length;
+        int c[]=new int[m+n];
+        int i=0;
+        int j=0;
+        int k=0;
+        while(i<n && j<m)
+        {
+            if(A[i]<B[j])
+            {
+                c[k]=A[i];
+                i++;
+            }
+            else
+            {
+                c[k]=B[j];
+                j++;
+            }
+            k++;
+        }
+
+        while(i<n)
+        {
+            c[k]=A[i];
+            i++; 
+            k++;
+        }
+
+          while(j<m)
+        {
+            c[k]=B[j];
+            j++; 
+            k++;
+        }
+        return c;
+    }
+}
